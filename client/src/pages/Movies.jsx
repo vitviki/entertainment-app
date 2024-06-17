@@ -59,7 +59,7 @@ const Movies = () => {
             <h1 className="md:heading-l heading-m text-gray-300 mb-3 text-left">
               Popular movies
             </h1>
-            <div className="flex sm:gap-8 gap-3 h-full flex-wrap justify-start">
+            <div className="flex sm:gap-8 gap-6 h-full flex-wrap justify-start">
               {popularMovies?.map((movie) => (
                 <ElementCard element={movie} type={"movie"} key={movie.id} />
               ))}

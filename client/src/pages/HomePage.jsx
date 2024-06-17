@@ -96,7 +96,7 @@ const HomePage = () => {
               <h1 className="heading-l text-gray-300 mb-3">
                 Recommended for you
               </h1>
-              <div className="flex sm:gap-8 gap-3 h-full flex-wrap">
+              <div className="flex sm:gap-8 gap-6 h-full flex-wrap">
                 {popularMovies?.slice(0, 5).map((movie) => (
                   <ElementCard element={movie} type={"movie"} key={movie.id} />
                 ))}

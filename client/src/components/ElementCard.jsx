@@ -17,7 +17,7 @@ const ElementCard = ({ element, type }) => {
   }
 
   return (
-    <div className="relative flex flex-col gap-1 justify-start lg:w-[320px] lg:min-w-[320px] md:w-[200px] md:min-w-[200px] w-[150px] min-w-[150px] cursor-pointer animate-slideup group">
+    <div className="relative flex flex-col gap-1 justify-start lg:w-[320px] lg:min-w-[320px] md:w-[200px] md:min-w-[200px] w-[120px] min-w-[120px] cursor-pointer animate-slideup group">
       <Bookmark element={element} type={type} />
       <div className="w-full group">
         <div
