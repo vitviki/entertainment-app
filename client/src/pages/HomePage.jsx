@@ -54,7 +54,6 @@ const HomePage = () => {
   // Get all the popular movies
   // Check to see if we have already gotten the popular movies, if not, the make the API calls.
   if (popularMovies === null) {
-    console.log("Hello");
     populateMovies();
   }
 
