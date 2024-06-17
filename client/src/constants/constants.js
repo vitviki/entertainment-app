@@ -7,7 +7,7 @@ export const options = {
   },
 };
 
-export const API_END_POINT = "http://localhost:5000/api/v1/user";
+export const API_END_POINT = "http://localhost:5000";
 export const TMDB_HOME = "https://api.themoviedb.org/3";
 export const SEACH_MOVIES_URL =
   "https://api.themoviedb.org/3/search/movie?query=";

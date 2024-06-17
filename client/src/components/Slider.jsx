@@ -49,7 +49,7 @@ const Slider = ({ slides }) => {
             <Bookmark element={slide} type={slide?.media_type} />
             <div className="w-full group">
               <div
-                className={`absolute inset-0 justify-center items-center group-hover:flex hidden`}
+                className={`absolute top-1/2 left-1/2 justify-center items-center group-hover:flex hidden`}
               >
                 <Play handleClick={() => handlePlayClick(slide)} />
               </div>

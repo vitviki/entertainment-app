@@ -32,19 +32,18 @@ const Login = () => {
       formData.append(value, values[value]);
     }
 
-    console.log(formData);
-
     try {
-      const res = await axios.post(`${API_END_POINT}/login`, formData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      });
+      const res = await axios.post(
+        `${API_END_POINT}/api/v1/user/login`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
 
-      if (res.data.success) {
-        toast.success(res.data.message);
-      }
       dispatch(setUser(res.data.user));
       navigate("/home");
     } catch (error) {

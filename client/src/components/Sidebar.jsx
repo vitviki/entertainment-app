@@ -19,7 +19,7 @@ const Sidebar = () => {
 
   async function handleLogout() {
     try {
-      const res = await axios.get(`${API_END_POINT}/logout`);
+      const res = await axios.get(`${API_END_POINT}/api/v1/user/logout`);
       console.log(res);
       if (res.data.success) {
         console.log("hello");
@@ -79,7 +79,7 @@ const Sidebar = () => {
             <img
               src={
                 user.profilePicturePath !== "undefined"
-                  ? `http://localhost:5000/assets/${user.profilePicturePath}`
+                  ? `${API_END_POINT}/assets/${user.profilePicturePath}`
                   : avatar
               }
               alt="profile_picture"
