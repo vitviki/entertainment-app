@@ -52,10 +52,10 @@ const TV = () => {
           </section>
         ) : (
           <section>
-            <h1 className="md:heading-l heading-m text-gray-300 mb-3 md:text-left text-center">
+            <h1 className="md:heading-l heading-m text-gray-300 mb-3 text-left">
               Popular TV Shows
             </h1>
-            <div className="flex gap-8 h-full flex-wrap md:justify-start justify-center">
+            <div className="flex sm:gap-8 gap-3 h-full flex-wrap justify-start">
               {popularTV?.map((show) => (
                 <ElementCard element={show} type={"TV"} key={show.id} />
               ))}

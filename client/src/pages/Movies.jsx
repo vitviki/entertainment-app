@@ -48,7 +48,7 @@ const Movies = () => {
             <h1 className="md:heading-l heading-m text-gray-300 mb-5">
               Found {movieSearchResults?.length} results for '{searchKeyword}'{" "}
             </h1>
-            <div className="flex gap-8 h-full flex-wrap md:justify-start justify-center">
+            <div className="flex sm:gap-8 gap-3 h-full flex-wrap md:justify-start justify-center">
               {movieSearchResults?.map((movie) => (
                 <ElementCard element={movie} type={"movie"} key={movie.id} />
               ))}
@@ -59,7 +59,7 @@ const Movies = () => {
             <h1 className="md:heading-l heading-m text-gray-300 mb-3 text-left">
               Popular movies
             </h1>
-            <div className="flex gap-8 h-full flex-wrap justify-start">
+            <div className="flex sm:gap-8 gap-3 h-full flex-wrap justify-start">
               {popularMovies?.map((movie) => (
                 <ElementCard element={movie} type={"movie"} key={movie.id} />
               ))}
