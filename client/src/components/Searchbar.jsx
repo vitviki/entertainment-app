@@ -69,7 +69,7 @@ const Searchbar = ({ placeHolderText, searchFor }) => {
         value={searchTerm}
         onKeyDown={(e) => (e.key === "Enter" ? handleSearch() : "")}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="font-light pl-16 text-xl tracking-wide w-[100%] bg-darkBlueWithBorder placeholder:text-gray-400 text-white focus:outline-none"
+        className="font-light pl-16 md:text-xl tracking-wide w-[100%] bg-darkBlueWithBorder placeholder:text-gray-400 text-white focus:outline-none"
       />
       <Toaster />
     </div>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -16,6 +17,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const { user } = useSelector((store) => store.user);
+  const [isOpen, setIsOpen] = useState(false);
 
   async function handleLogout() {
     try {
@@ -73,36 +75,40 @@ const Sidebar = () => {
           </Link>
         </div>
       </div>
-      <div className="">
-        {user ? (
-          <div className="flex lg:flex-col justify-center gap-5">
-            <img
-              src={
-                user.profilePicturePath !== "undefined"
-                  ? `${API_END_POINT}/assets/${user.profilePicturePath}`
-                  : avatar
-              }
-              alt="profile_picture"
-              className="md:w-10 md:h-10 w-5 h-5 rounded-full object-cover"
-              title={`${user.firstName + " " + user.lastName}`}
-            />
-            <CiLogout
-              className="text-orange md:text-3xl text-2xl cursor-pointer"
-              title="Sign Out"
-              onClick={handleLogout}
-            />
-          </div>
-        ) : (
-          <div>
-            <Link to="/login">
-              <CiLogin
-                className="text-orange md:text-3xl text-2xl"
-                title="Sign In"
+
+      {user ? (
+        <div className="relative flex lg:flex-col justify-center gap-5">
+          <img
+            src={
+              user.profilePicturePath !== "undefined"
+                ? `${API_END_POINT}/assets/${user.profilePicturePath}`
+                : avatar
+            }
+            alt="profile_picture"
+            className="md:w-10 md:h-10 w-5 h-5 rounded-full object-cover cursor-pointer"
+            title={`${user.firstName + " " + user.lastName}`}
+            onClick={() => setIsOpen((prev) => (prev = !prev))}
+          />
+          {isOpen && (
+            <div className="absolute md:-top-10 top-6 left-0 flex justify-start z-10">
+              <CiLogout
+                className="text-orange md:text-3xl text-2xl cursor-pointer"
+                title="Sign Out"
+                onClick={handleLogout}
               />
-            </Link>
-          </div>
-        )}
-      </div>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div>
+          <Link to="/login">
+            <CiLogin
+              className="text-orange md:text-3xl text-2xl"
+              title="Sign In"
+            />
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

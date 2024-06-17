@@ -13,7 +13,7 @@ const Bookmarks = () => {
           user.favoriteMovies.length > 0 || user.favortiteTVs.length > 0 ? (
             <section>
               <div className="">
-                <h1 className="heading-l text-gray-300 mb-5">
+                <h1 className="md:heading-l heading-m text-gray-300 mb-5">
                   Favorite movies
                 </h1>
                 <div className="flex gap-8 h-full flex-wrap">
@@ -27,7 +27,7 @@ const Bookmarks = () => {
                 </div>
               </div>
               <div className="mt-8">
-                <h1 className="heading-l text-gray-300 mb-5">
+                <h1 className="md:heading-l heading-m text-gray-300 mb-5">
                   Favorite TV Shows
                 </h1>
                 <div className="flex gap-8 h-full flex-wrap">
@@ -43,14 +43,14 @@ const Bookmarks = () => {
             </section>
           ) : (
             <div>
-              <h1 className="heading-l text-white">
+              <h1 className="md:heading-l heading-m text-white">
                 Favorites is currently empty
               </h1>
             </div>
           )
         ) : (
           <div>
-            <h1 className="heading-l text-white">
+            <h1 className="md:heading-l heading-m text-white">
               Please login to view your favorites
             </h1>
           </div>

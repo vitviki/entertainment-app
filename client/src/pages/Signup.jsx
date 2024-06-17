@@ -75,7 +75,7 @@ const Signup = () => {
         {({ values, handleSubmit, setFieldValue }) => (
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col lg:w-3/12 w-3/4 p-8 mb-36 mx-auto items-start justify-center rounded-2xl bg-darkBlue"
+            className="flex flex-col lg:w-3/12 w-full p-8 mb-36 mx-auto items-start justify-center rounded-2xl bg-darkBlue"
           >
             <h1 className="md:heading-l heading-m text-white mb-2 md:text-left text-center">
               Sign Up
