@@ -59,7 +59,7 @@ const TVDetails = () => {
                 Language
               </h4>
               <p className="heading-s text-white font-semibold">
-                {tvDetailsData?.spoken_languages[0].english_name}
+                {tvDetailsData?.spoken_languages[0]?.english_name}
               </p>
             </div>
             <div className="flex flex-col items-start gap-1">
