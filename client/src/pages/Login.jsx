@@ -88,7 +88,7 @@ const Login = () => {
               />
 
               <h3 className="md:heading-xs heading-2xs text-gray-400 mx-auto">
-                Don't have an accout?{" "}
+                Don't have an account?{" "}
                 <Link to="/signup">
                   <span className="text-orange">Sign Up</span>
                 </Link>

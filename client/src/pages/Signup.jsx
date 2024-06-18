@@ -129,7 +129,7 @@ const Signup = () => {
                 text={`${isLoading ? "Please wait" : "Sign Up"}`}
               />
               <h3 className="md:heading-xs heading-2xs text-gray-400 mx-auto">
-                Already have an accout?{" "}
+                Already have an account?{" "}
                 <Link to="/login">
                   <span className="text-orange">Login</span>
                 </Link>
