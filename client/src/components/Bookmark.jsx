@@ -23,60 +23,64 @@ const Bookmark = ({ element, type }) => {
   // After creating the object, we will call appropriate API function to
   // add the object inside User document in MongoDB
   const handleClick = async () => {
-    switch (type) {
-      case "movie":
-        try {
-          const movieData = {
-            id: element.id,
-            title: element.title,
-            backdrop_path: element.backdrop_path,
-            release_date: element.release_date,
-            type: type,
-            adult: element.adult,
-          };
+    if (!user) {
+      toast.error("Please login to add to favorites");
+    } else {
+      switch (type) {
+        case "movie":
+          try {
+            const movieData = {
+              id: element.id,
+              title: element.title,
+              backdrop_path: element.backdrop_path,
+              release_date: element.release_date,
+              type: type,
+              adult: element.adult,
+            };
 
-          // Make a call to the backend API
-          const res = await axios.put(
-            `${API_END_POINT}/api/v1/user/${user._id}/addRemoveFavoriteMovies`,
-            movieData,
-            {
-              headers: { "Content-Type": "application/json" },
-              withCredentials: true,
-            }
-          );
+            // Make a call to the backend API
+            const res = await axios.put(
+              `${API_END_POINT}/api/v1/user/${user._id}/addRemoveFavoriteMovies`,
+              movieData,
+              {
+                headers: { "Content-Type": "application/json" },
+                withCredentials: true,
+              }
+            );
 
-          // Update the current user's state
-          dispatch(setFavoriteMovies(res.data.user.favoriteMovies));
-        } catch (error) {
-          toast.error(error.response.data.message);
-        }
-        break;
-      default:
-        try {
-          const tvData = {
-            id: element.id,
-            title: element.name,
-            backdrop_path: element.backdrop_path,
-            release_date: element.first_air_date,
-            type: type,
-            adult: element.adult,
-          };
+            // Update the current user's state
+            dispatch(setFavoriteMovies(res.data.user.favoriteMovies));
+          } catch (error) {
+            toast.error(error.response.data.message);
+          }
+          break;
+        default:
+          try {
+            const tvData = {
+              id: element.id,
+              title: element.name,
+              backdrop_path: element.backdrop_path,
+              release_date: element.first_air_date,
+              type: type,
+              adult: element.adult,
+            };
 
-          // Make a call to the backend API
-          const res = await axios.put(
-            `${API_END_POINT}/api/v1/user/${user._id}/addRemoveFavoriteTV`,
-            tvData,
-            {
-              headers: { "Content-Type": "application/json" },
-              withCredentials: true,
-            }
-          );
+            // Make a call to the backend API
+            const res = await axios.put(
+              `${API_END_POINT}/api/v1/user/${user._id}/addRemoveFavoriteTV`,
+              tvData,
+              {
+                headers: { "Content-Type": "application/json" },
+                withCredentials: true,
+              }
+            );
 
-          // Update the current user's state
-          dispatch(setFavoriteTVShows(res.data.user.favortiteTVs));
-        } catch (error) {
-          toast.error(error.response.data.message);
-        }
+            // Update the current user's state
+            dispatch(setFavoriteTVShows(res.data.user.favortiteTVs));
+          } catch (error) {
+            toast.error(error.response.data.message);
+          }
+      }
     }
   };
 
